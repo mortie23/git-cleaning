@@ -13,7 +13,7 @@ Put this in the file gernation script
 for n in {1..20}; do
   truncate -s 5K file$n.txt
 done
-truncate -s 10M file-big.txt
+cp ../bigfile.bin.gz ./
 ```
 
 ```sh
@@ -38,6 +38,16 @@ Oh no, wait, what has happened?
 ```sh
 git checkout working
 git pull origin master
+```
+
+Some other files added and modified.
+
+```sh
+mkdir working
+touch ./working/test.js
+```
+
+```sh
 git add .
 git commit -m "a working commit with the big bad file"
 git push origin working
